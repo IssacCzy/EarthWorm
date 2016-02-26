@@ -1,0 +1,1 @@
+java -cp . -server -Xms32m -Xmx8000m   ServerStarter com.jingoal.mgt.fileshare.R
