@@ -96,7 +96,7 @@ public class HtmlLogUtil {
 		try {
 			StringBuffer sb = new StringBuffer();
 			sb.append("</div></section>");
-			sb.append("<div class=\"copyright\">&copy; 2020 Issac. EARTH WORM Auto Testing. All Rights Reserved.</div>    ");
+			sb.append("<div class=\"copyright\">&copy; 2020 Issac_czy@163.com. EARTH WORM Auto Testing. All Rights Reserved.</div>    ");
 			sb.append("</div></div></div>");
 			sb.append("<script src=\"../assets/js/jquery.js\"></script>");
 			sb.append("<script src=\"../assets/js/bootstrap-transition.js\"></script>");
