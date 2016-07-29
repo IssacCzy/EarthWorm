@@ -17,18 +17,14 @@
 		<org.springframework.version>3.2.2.RELEASE</org.springframework.version>
 		<org.slf4j>1.6.3</org.slf4j>
 		<logback>0.9.30</logback>
-		<dagger>1.3.4</dagger>
-		
+		<!-- <dagger>1.3.4</dagger> -->
+
 	</properties>
 
-	<dependencies>	
-	
-		<dependency>
-			<groupId>com.netease.qa</groupId>
-			<artifactId>arrow</artifactId>
-			<version>0.0.2</version>
-			<scope>test</scope>
-		</dependency>
+	<dependencies>
+
+		<!-- <dependency> <groupId>com.netease.qa</groupId> <artifactId>arrow</artifactId> 
+			<version>0.0.2</version> <scope>test</scope> </dependency> -->
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
@@ -57,15 +53,12 @@
 			<version>6.8.5</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		<!-- <dependency>
-			<groupId>com.netease</groupId>
-			<artifactId>dagger</artifactId>
-			<version>${dagger}</version>
-		</dependency> -->
-		
-		
-		
+
+		<!-- <dependency> <groupId>com.netease</groupId> <artifactId>dagger</artifactId> 
+			<version>${dagger}</version> </dependency> -->
+
+
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
@@ -76,9 +69,9 @@
 			<artifactId>logback-classic</artifactId>
 			<version>${logback}</version>
 		</dependency>
-		
-	</dependencies>	
-	
+
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -99,7 +92,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -115,12 +108,13 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.16</version>
 				<configuration>
-				    <properties>
+					<properties>
 						<property>
 							<name>listener</name>
 							<value>com.netease.qa.testng.PowerEmailableReporter,com.netease.qa.testng.RetryListener,com.netease.qa.testng.TestResultListener</value>
@@ -133,19 +127,29 @@
 				</configuration>
 			</plugin>
 			
-			
+			<!-- 将项目依赖的jar提取到指定文件夹lib下 -->
+			<!-- <plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<configuration>
+					<outputDirectory>${project.build.directory}/lib</outputDirectory>
+					<excludeTransitive>false</excludeTransitive>
+					<stripVersion>true</stripVersion>
+				</configuration>
+			</plugin> -->
+
+
 		</plugins>
 	</build>
 	<repositories>
-	 	<repository>
+		<repository>
 			<id>spring-milestone</id>
 			<name>Spring Maven MILESTONE Repository</name>
 			<url>http://maven.springframework.org/milestone</url>
 		</repository>
 		<repository>
-		    <id>spring-release</id>
-		    <name>Spring Maven Release Repository</name>
-		    <url>http://repo.springsource.org/libs-release</url>
+			<id>spring-release</id>
+			<name>Spring Maven Release Repository</name>
+			<url>http://repo.springsource.org/libs-release</url>
 		</repository>
 		<repository>
 			<id>arrow-mvn-repo</id>
@@ -155,5 +159,5 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
-  </repositories>
+	</repositories>
 </project>

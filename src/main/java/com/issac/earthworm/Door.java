@@ -20,7 +20,7 @@ public class Door {
 		
 		initParams(args);
 		
-		String jsCaseFile = "testCase/" + module + "/" + fileName + ".js";;
+		String jsCaseFile = "../testCase/" + module + "/" + fileName + ".js";;
 		
 		ScriptEngineManager manager = new ScriptEngineManager();
 		ScriptEngine engine = manager.getEngineByName("js");

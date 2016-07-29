@@ -10,6 +10,9 @@
 	<fileSets>
 		<fileSet>
 			<directory>src/main/bin</directory>
+			<excludes>
+			    <exclude>ServerStarter.class</exclude>
+			</excludes>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 		<fileSet>
@@ -17,10 +20,21 @@
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 	</fileSets>
+	<files>
+	    <file>
+	      <source>src/main/bin/ServerStarter.class</source>
+	      <outputDirectory>libs</outputDirectory>
+	    </file>
+  	</files>
 	<dependencySets>
-		<dependencySet>
+		<!-- <dependencySet>
 			<outputDirectory>/</outputDirectory>
 			<scope>runtime</scope>
-		</dependencySet>
+		</dependencySet> -->
+		 <dependencySet>  
+            <useProjectArtifact>true</useProjectArtifact>  <!-- 当前项目构件是否包含在这个依赖集合里  -->
+            <outputDirectory>libs</outputDirectory>   <!-- 将scope为runtime的依赖包打包到lib目录下   -->
+            <scope>runtime</scope>  
+        </dependencySet>  
 	</dependencySets>
 </assembly>

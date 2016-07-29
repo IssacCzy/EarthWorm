@@ -23,7 +23,7 @@ public class BrowserAction {
 	Logger logger = Logger.getLogger(BrowserAction.class.getName());
 	File htmlLogFile = null;
 	BrowserEmulator be = null;
-	String resultPath = BrowserAction.class.getResource("/").getPath()+"caseResult";
+	String resultPath = BrowserAction.class.getResource("/").getPath()+"../caseResultLog";
 	String resultLog = "";
 	boolean isElementOut = false;
 	

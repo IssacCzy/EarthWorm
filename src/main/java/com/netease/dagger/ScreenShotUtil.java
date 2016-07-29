@@ -29,16 +29,12 @@ import org.openqa.selenium.remote.Augmenter;
 
 /**
  * Log Tools
- * @author ChenKan
+ * @author Issac_czy@163.com
  */
-public class LogTools {
-
-	public static void log(String logText) {
-		System.out.println("[" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis())) + "] " + logText);
-	}
+public class ScreenShotUtil {
 
 	public static String screenShot(BrowserEmulator be) {
-		String dir = "screenshot"; // TODO
+		String dir = "screenshot"; 
 		String time = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
 		String screenShotPath = dir + File.separator + time + ".png";
 

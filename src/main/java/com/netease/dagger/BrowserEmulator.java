@@ -359,7 +359,7 @@ public class BrowserEmulator {
 	 * @param text
 	 * 
 	 */
-	public void inputKeyboard(String text) {
+	/*public void inputKeyboard(String text) {
 		String cmd = System.getProperty("user.dir") + "\\res\\SeleniumCommand.exe" + " sendKeys " + text;
 
 		Process p = null;
@@ -372,7 +372,7 @@ public class BrowserEmulator {
 			p.destroy();
 		}
 		logger.info("Pressed key with string " + text);
-	}
+	}*/
 	
 	//TODO Mimic system-level mouse event
 
@@ -505,7 +505,7 @@ public class BrowserEmulator {
 	 * @param notice：xpath
 	 */
 	private void handleFailure(String notice) {
-		String png = LogTools.screenShot(this);
+		String png = ScreenShotUtil.screenShot(this);
 		String log = notice + " >> capture screenshot at " + png;
 		logger.error(log);
 		if (GlobalSettings.baseStorageUrl.lastIndexOf("/") == GlobalSettings.baseStorageUrl.length()) {

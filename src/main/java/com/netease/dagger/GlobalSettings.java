@@ -30,9 +30,9 @@ public class GlobalSettings {
 
 	public static int browserCoreType = Integer.parseInt(prop.getProperty("BrowserCoreType", "2"));
 
-	public static String chromeDriverPath = prop.getProperty("ChromeDriverPath", "res/chromedriver.exe");
+	public static String chromeDriverPath = prop.getProperty("ChromeDriverPath", "../res/chromedriver.exe");
 //	public static String chromeDriverPath = "/Users/chenDoInG/Downloads/chromedriver_for_mac_64";
-	public static String ieDriverPath = prop.getProperty("IEDriverPath", "res/IEDriverServer.exe");
+	public static String ieDriverPath = prop.getProperty("IEDriverPath", "../res/IEDriverServer.exe");
 
 	public static String stepInterval = prop.getProperty("StepInterval", "500");
 
@@ -47,7 +47,7 @@ public class GlobalSettings {
 	public static Properties getProperties() {
 		Properties prop = new Properties();
 		try {
-			FileInputStream file = new FileInputStream("prop.properties");
+			FileInputStream file = new FileInputStream("../prop.properties");
 			prop.load(file);
 			file.close();
 		} catch (Exception e) {

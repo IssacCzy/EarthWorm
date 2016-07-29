@@ -51,5 +51,6 @@ set /p file_code=您要运行的测试用例名：
 goto runCase
 
 :runCase
+cd libs
 java -cp . -server -Xms32m -Xmx8000m  ServerStarter com.issac.earthworm.Door %module_code% %case_code% %file_code%
 @pause
