@@ -666,6 +666,16 @@ public class BrowserEmulator {
 	}
 	
 	/**
+	 * 获取xpath对应的元素个数
+	 * @param xpath
+	 * @return
+	 */
+	public int getXpthCount(String xpath){
+		Number xpathCount = this.browser.getXpathCount(xpath);
+		return xpathCount.intValue();
+	}
+	
+	/**
 	 * Extend Method: Actions:以上 api 不能满足的操作均可有 actions 对象来实现
 	 * @return
 	 */

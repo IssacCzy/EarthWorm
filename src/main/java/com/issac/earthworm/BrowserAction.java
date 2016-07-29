@@ -495,4 +495,32 @@ public class BrowserAction {
 	private Actions getActions(){
 		return be.getActions();
 	}
+	
+	/**
+	 * Get the table element`s content
+	 * @param xpath
+	 */
+	public void getTableContent(String xpath){
+		HtmlLogUtil.appendLog2Html(htmlLogFile, 1, "获取table 表单: ["+xpath+"] 中的内容");
+		
+		int rowCount = be.getXpthCount(xpath);
+		int columnCount = 0;
+		String curXpath = xpath;
+		if(rowCount>0){
+			curXpath = curXpath + "[1]/td";
+			columnCount = be.getXpthCount(curXpath);
+			
+			HtmlLogUtil.appendLog2Html(htmlLogFile, 1, "查询的表格大小为：["+rowCount+"]行     ["+ columnCount+"]列");
+			
+			for (int curRow=1;curRow<=rowCount;curRow++) {
+				for(int curColumn=1;curColumn<=columnCount;curColumn++){
+					curXpath = xpath + "["+curRow+"]/td["+curColumn+"]";
+					WebElement cell = be.getBrowserCore().findElement(By.xpath(curXpath));
+					String content = cell.getText();
+					HtmlLogUtil.appendLog2Html(htmlLogFile, 1, "["+curRow+"]行     ["+ curColumn+"]列："+content);
+				}
+			}
+		}
+		
+	}
 }
